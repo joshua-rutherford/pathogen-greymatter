@@ -1,7 +1,7 @@
 ignore:
   - '^\.git/.*$'
   - '^\.pathogen\.yml'
-varaibles:
+variables:
   - name: kubernetesNamespace
     description: the kubernetes namespace in which the service is deployed
     value: service
