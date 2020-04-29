@@ -1,0 +1,23 @@
+{
+    "zone_key": "{{ variable "zone" }}",
+    "listener_key": "{{ variable "serviceName" }}.ingress.listener",
+    "domain_keys": [
+        "{{ variable "serviceName" }}.ingress.domain"
+    ],
+    "name": "ingress",
+    "ip": "0.0.0.0",
+    "port": "{{ variable "serviceIngressPort" }},
+    "protocol": "http_auto",
+    "secret": {
+        "secret_key": "{{ variable "serviceName" }}.identity",
+        "secret_name": "spiffe://{{ variable "spireTrustDomain" }}/ns/{{ variable "kubernetesNamespace" }}/sa/{{ variable "kubernetesServiceAccount" }}",
+        "secret_validation_name": "spiffe://{{ variable "spireTrustDomain" }}",
+        "subject_names": [
+            "spiffe:///ns/ingress/sa/private"
+        ],
+        "ecdh_curves": [
+            "X25519:P-256:P-521:P-384"
+        ]
+    },
+    "tracing_config": null
+}
