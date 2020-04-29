@@ -1,5 +1,5 @@
 ignore:
-  - '^\.git\/.*$'
+  - '^\.git/.*$'
   - '^\.pathogen\.yml'
 varaibles:
   - name: kubernetesNamespace
