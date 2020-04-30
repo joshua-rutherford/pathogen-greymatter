@@ -10,10 +10,10 @@
     "protocol": "http_auto",
     "secret": {
         "secret_key": "{{ variable "serviceName" }}.identity",
-        "secret_name": "spiffe://{{ variable "spireTrustDomain" }}/ns/{{ variable "kubernetesNamespace" }}/sa/{{ variable "kubernetesServiceAccount" }}",
-        "secret_validation_name": "spiffe://{{ variable "spireTrustDomain" }}",
+        "secret_name": "spiffe://{{ variable "trustDomain" }}/ns/{{ variable "serviceNamespace" }}/sa/{{ variable "serviceServiceAccount" }}",
+        "secret_validation_name": "spiffe://{{ variable "trustDomain" }}",
         "subject_names": [
-            "spiffe:///ns/ingress/sa/private"
+            "spiffe:///ns/edge/sa/edge"
         ],
         "ecdh_curves": [
             "X25519:P-256:P-521:P-384"
