@@ -5,10 +5,7 @@
     "instances": [
         {
             "host": "{{ variable "serviceHost" }}",
-            "port": {
-                { variable "servicePort"
-                }
-            }
+            "port": {{ variable "servicePort" }}
         }
     ],
     "circuit_breakers": null,
